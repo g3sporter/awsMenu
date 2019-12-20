@@ -9,9 +9,11 @@ variable "requester" {
   default = "g3sporter"
 }
 
+locals {
 name_description   = var.size == "small" ? "small-one" : "medium_one"
 instance_type   = var.size == "small" ? "t2.micro" : "t2.small"
-
+    }
+    
 #variable "size" {
 #    description = "size of instances"
 #    default = {"name_description"="medium_ones","instance_type"="t2.micro"}
