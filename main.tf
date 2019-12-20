@@ -19,9 +19,9 @@ variable "size" {
 }
 locals {
   size = {
-    small = {count=2, instance=t2.micro},
-    med = {count=4, instance=t2.medium},
-    large = {count=4, instance=t2.large}
+    small = {"count"="2", "instance"="t2.micro"},
+    med = {"count"="4", "instance"="t2.medium"},
+    large = {"count"="4", "instance"="t2.large"}
  }
 }
     
