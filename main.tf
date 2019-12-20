@@ -21,8 +21,7 @@ provider "aws" {
 
 # create a number of EC2 instances
 resource "aws_instance" "my_instance" {
-  # if var.instance count is > 2 ? then create 0 instances : else create the number specified in var.instance_count
-  count = var.instance_count < 10 ? 0 : var.instance_count
+  count = var.instance_count 
   # The amazon machine image number (only valid in us-east-2)
   ami = "ami-0d8f6eb4f641ef691"
   # The instance size
