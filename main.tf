@@ -24,11 +24,6 @@ locals {
     large = {count=4, instance=t2.large}
  }
 }
-
-
-
-
-
     
 #variable "size" {
 #    description = "size of instances"
@@ -44,7 +39,8 @@ provider "aws" {
 
 # create a number of EC2 instances
 resource "aws_instance" "my_instance" {
-  count = var.instance_count 
+  count = local.size[$var.size].count
+    
   # The amazon machine image number (only valid in us-east-2)
   ami = "ami-0d8f6eb4f641ef691"
   # The instance size
