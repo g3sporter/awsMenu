@@ -2,6 +2,7 @@
 variable "region" {
     default = "us-east-2"
     }
+variable "size" { }
 variable "name_description" { }
 variable "instance_type" { }
 variable "instance_count" { }
