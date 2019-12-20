@@ -45,7 +45,7 @@ resource "aws_instance" "my_instance" {
   ami = "ami-0d8f6eb4f641ef691"
   # The instance size
     
-   instance_type = local.size[$var.size].instance
+   instance_type = var.size.instance
   
     
   #instance_type = "t2.micro"
