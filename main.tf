@@ -40,12 +40,12 @@ provider "aws" {
 # create a number of EC2 instances
 resource "aws_instance" "my_instance" {
   #count = local.size[$var.size].count
-   count = var.size.count  
+   count = local.size.count  
   # The amazon machine image number (only valid in us-east-2)
   ami = "ami-0d8f6eb4f641ef691"
   # The instance size
     
-   instance_type = var.size.instance
+   instance_type = local.size.instance
   
     
   #instance_type = "t2.micro"
