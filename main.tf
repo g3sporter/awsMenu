@@ -11,6 +11,7 @@ variable "requester" {
 variable "size" {
     description = "size of instances"
     default = {"name_description"="medium_ones","instance_type"="t2.micro"}
+    small = {"name_description"="small_ones","instance_type"="t2.small"
 }
 
 # Use the AWS provider and deploy resources in us-east-2 region
