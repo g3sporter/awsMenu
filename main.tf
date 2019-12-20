@@ -2,7 +2,7 @@
 variable "region" {
     default = "us-east-2"
     }
-variable "size" { }
+
 variable "name_description" { 
     default = "notDefined"
     }
@@ -14,10 +14,21 @@ variable "requester" {
   default = "g3sporter"
 }
 
+variable "size" {
+  default = "small"
+}
 locals {
-name_description   = var.size == "small" ? "small-one" : "medium_one"
-instance_type   = var.size == "small" ? "t2.micro" : "t2.small"
-    }
+  size = {
+    small = {count=2, instance=t2.micro},
+    med = {count=4, instance=t2.medium},
+    large = {count=4, instance=t2.large}
+ }
+}
+
+
+
+
+
     
 #variable "size" {
 #    description = "size of instances"
@@ -37,7 +48,10 @@ resource "aws_instance" "my_instance" {
   # The amazon machine image number (only valid in us-east-2)
   ami = "ami-0d8f6eb4f641ef691"
   # The instance size
- instance_type = var.instance_type
+    
+   instance_type = local.size[$var.size].instance
+  
+    
   #instance_type = "t2.micro"
   # Specify this block of tags on the resource
   tags = {
