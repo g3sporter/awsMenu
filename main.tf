@@ -3,8 +3,8 @@ variable "region" {
     default = "us-east-2"
     }
 variable "size" { }
-variable "name_description" { }
-variable "instance_type" { }
+#variable "name_description" { }
+#variable "instance_type" { }
 variable "instance_count" { }
 variable "requester" {
   default = "g3sporter"
