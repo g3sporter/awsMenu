@@ -6,10 +6,10 @@ variable "region" {
 variable "name_description" { 
     default = "notDefined"
     }
-variable "instance_type" { 
-    default = "t2.nano"
-    }
-variable "instance_count" { }
+#variable "instance_type" { 
+#    default = "t2.nano"
+#    }
+#variable "instance_count" { }
 variable "requester" {
   default = "g3sporter"
 }
