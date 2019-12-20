@@ -15,7 +15,7 @@ variable "size" {
 
 # Use the AWS provider and deploy resources in us-east-2 region
 provider "aws" {
-  region = ${"var.region"}
+  region = var.region
 }
 
 
