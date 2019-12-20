@@ -10,12 +10,12 @@ variable "requester" {
 
 variable "size" {
     description = "size of instances"
-    default = {"name_description"="medium_ones","amount"="4","instance_type"="t2.micro}
+    default = {"name_description"="medium_ones","amount"="4","instance_type"="t2.micro"}
 }
 
 # Use the AWS provider and deploy resources in us-east-2 region
 provider "aws" {
-  region = ${var.region"}
+  region = ${"var.region"}
 }
 
 
